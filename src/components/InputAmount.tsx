@@ -2,7 +2,7 @@ import { ReactElement } from 'react';
 import styled from 'styled-components';
 import MaskedInput from 'react-text-mask';
 import createNumberMask from 'text-mask-addons/dist/createNumberMask';
-
+import InputLabel from './InputLabel';
 import { getNumber } from '../utils';
 
 import moneySvg from '../assets/icons/money.svg';
@@ -31,14 +31,6 @@ const InputAmount = (props: InputProps): ReactElement => {
 
   const InputAmount = styled.div`
     position: relative;
-  `;
-  const InputLabel = styled.label`
-    font-family: 'Work Sans';
-    display: block;
-    font-size: 0.8rem;
-    line-height: 1.1rem;
-    color: #1e2a32;
-    margin-bottom: 0.4rem;
   `;
 
   const InputFieldWrapper = styled.label`
@@ -74,7 +66,7 @@ const InputAmount = (props: InputProps): ReactElement => {
 
   return (
     <InputAmount className="Amount">
-      <InputLabel htmlFor="amount">{label}</InputLabel>
+      <InputLabel labelFor="amount">{label}</InputLabel>
       <InputFieldWrapper htmlFor="amount">
         <InputField
           mask={currencyMask}
