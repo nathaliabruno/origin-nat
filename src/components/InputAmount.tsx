@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import MaskedInput from 'react-text-mask';
 import createNumberMask from 'text-mask-addons/dist/createNumberMask';
 
+import { getNumber } from '../utils';
+
 import moneySvg from '../assets/icons/money.svg';
 
 interface InputProps {
@@ -66,6 +68,10 @@ const InputAmount = (props: InputProps): ReactElement => {
     color: #4d6475;
   `;
 
+  const handleChange = (value: string) => {
+    console.log(getNumber(value));
+  };
+
   return (
     <InputAmount className="Amount">
       <InputLabel htmlFor="amount">{label}</InputLabel>
@@ -75,6 +81,7 @@ const InputAmount = (props: InputProps): ReactElement => {
           inputMode="numeric"
           id="amount"
           name="amount"
+          onChange={(e) => handleChange(e.target.value)}
         />
       </InputFieldWrapper>
     </InputAmount>
