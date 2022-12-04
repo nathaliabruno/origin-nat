@@ -23,6 +23,7 @@ const ReachGoal = (): ReactElement => {
     getMonthYearDateText(dayjs().toISOString()).year ===
       getMonthYearDateText(reachDate).year;
 
+  const { month, year } = getMonthYearDateText(reachDate);
   return (
     <div>
       <InputLabel labelFor="reachDate">Reach goal by</InputLabel>
@@ -32,8 +33,7 @@ const ReachGoal = (): ReactElement => {
       >
         Previous
       </button>
-      {getMonthYearDateText(reachDate).month}{' '}
-      {getMonthYearDateText(reachDate).year}
+      {month} {year}
       <button onClick={() => dispatch(incrementDate())}>Next</button>
     </div>
   );

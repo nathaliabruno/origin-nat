@@ -42,7 +42,7 @@ const MonthlyAmount = (): ReactElement => {
   });
 
   useEffect(() => {
-    setMonthlyAmount((prevState) => amount / monthsToReach);
+    setMonthlyAmount(() => amount / monthsToReach);
   }, [monthsToReach, amount]);
 
   return (
