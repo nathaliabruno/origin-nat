@@ -1,33 +1,28 @@
-import { ReactElement, useState } from 'react';
+import { ReactElement } from 'react';
 import InputLabel from './InputLabel';
 
+import { getMonthYearDateText } from '../utils/dates';
+
+import { useSelector, useDispatch } from 'react-redux';
+
 import {
-  getMonthYearDateText,
-  getNextMonthDate,
-  getPreviousMonthDate,
-} from '../utils/dates';
-import dayjs, { Dayjs } from 'dayjs';
+  incrementDate,
+  decrementDate,
+  selectDate,
+} from '../redux/slices/dateSlice';
 
 const ReachGoal = (): ReactElement => {
-  const [reachDate, setReachDate] = useState(dayjs());
+  const reachDate = useSelector(selectDate);
 
-  const handleNextMonth = (reachDate: Dayjs) => {
-    const nextMonth = getNextMonthDate(reachDate);
-    setReachDate(nextMonth);
-  };
-
-  const handlePreviousMonth = (reachDate: Dayjs) => {
-    const nextMonth = getPreviousMonthDate(reachDate);
-    setReachDate(nextMonth);
-  };
+  const dispatch = useDispatch();
 
   return (
     <div>
       <InputLabel labelFor="reachDate">Reach goal by</InputLabel>
-      <button onClick={() => handlePreviousMonth(reachDate)}>Previous</button>
+      <button onClick={() => dispatch(decrementDate())}>Previous</button>
       {getMonthYearDateText(reachDate).month}{' '}
       {getMonthYearDateText(reachDate).year}
-      <button onClick={() => handleNextMonth(reachDate)}>Next</button>
+      <button onClick={() => dispatch(incrementDate())}>Next</button>
     </div>
   );
 };
