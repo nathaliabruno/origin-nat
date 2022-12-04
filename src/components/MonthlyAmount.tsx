@@ -2,8 +2,10 @@ import { ReactElement, useEffect, useState } from 'react';
 
 import { useSelector } from 'react-redux';
 
-import { selectMonthsToReach } from '../redux/slices/dateSlice';
-import { selectAmount } from '../redux/slices/amountSlice';
+import { selectMonthsToReach, selectDate } from '../redux/slices/dateSlice';
+import { selectAmount, selectMaskedAmount } from '../redux/slices/amountSlice';
+
+import { getMonthYearDateText } from '../utils/dates';
 
 import MaskedInput from 'react-text-mask';
 import { createNumberMask } from 'text-mask-addons';
@@ -34,6 +36,9 @@ const MonthlyInput = styled(MaskedInput)`
 const MonthlyAmount = (): ReactElement => {
   const monthsToReach = useSelector(selectMonthsToReach);
   const amount = useSelector(selectAmount);
+  const maskedAmount = useSelector(selectMaskedAmount);
+  const reachDate = useSelector(selectDate);
+  const { month, year } = getMonthYearDateText(reachDate);
 
   const [monthlyAmount, setMonthlyAmount] = useState(0);
 
@@ -56,6 +61,14 @@ const MonthlyAmount = (): ReactElement => {
         readOnly
         disabled
       />
+
+      <p>
+        You are planning <strong>{monthsToReach} monthly deposits</strong> to
+        reach your <strong>${maskedAmount}</strong> goal by{' '}
+        <strong>
+          {month} {year}
+        </strong>
+      </p>
     </div>
   );
 };
