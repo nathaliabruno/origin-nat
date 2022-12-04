@@ -11,7 +11,7 @@ const BoxWrapper = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 560px;
-  margin: 50px auto;
+  margin: auto;
   align-items: center;
   padding: 2.5rem;
   background-color: white;
