@@ -7,7 +7,11 @@ import { getNumber } from '../utils';
 
 import { useSelector, useDispatch } from 'react-redux';
 
-import { setByAmount, selectAmount } from '../redux/slices/amountSlice';
+import {
+  setByAmount,
+  selectAmount,
+  setMasked,
+} from '../redux/slices/amountSlice';
 
 import moneySvg from '../assets/icons/money.svg';
 
@@ -69,6 +73,7 @@ const InputAmount = (props: InputProps): ReactElement => {
 
   const handleChange = (value: string) => {
     dispatch(setByAmount(getNumber(value)));
+    dispatch(setMasked(`$${value}`));
   };
 
   return (

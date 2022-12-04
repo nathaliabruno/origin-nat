@@ -28,7 +28,7 @@ export const selectDate = (state: { date: { value: string } }): string =>
 export const selectMonthsToReach = (state: {
   date: { value: string };
 }): number => {
-  return dayjs(today).diff(state.date.value, 'month') * -1;
+  return (dayjs(today).diff(state.date.value, 'month') - 1) * -1;
 };
 
 export const { incrementDate, decrementDate } = dateSlice.actions;
