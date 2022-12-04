@@ -21,8 +21,11 @@ const DetailsText = (): ReactElement => {
 
   return (
     <DetailsWrapper>
-      You are planning <strong>{monthsToReach} monthly deposits</strong> to
-      reach your <strong>${maskedAmount}</strong> goal by{' '}
+      You are planning{' '}
+      <strong>
+        {monthsToReach} monthly deposit{monthsToReach > 1 && 's'}
+      </strong>{' '}
+      to reach your <strong>${maskedAmount}</strong> goal by{' '}
       <strong>
         {month} {year}
       </strong>
