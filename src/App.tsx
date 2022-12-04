@@ -5,7 +5,7 @@ import Tagline from './components/Tagline';
 const Root = styled.div`
   font-family: 'Work Sans';
   background-color: #e5e5e5;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   padding: 0;
   margin: 0;

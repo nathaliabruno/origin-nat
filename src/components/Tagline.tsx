@@ -14,6 +14,10 @@ const TaglineText = styled.h3`
   text-algin: center;
   padding: 1rem;
   color: #1b31a8;
+  @media (max-width: 768px) {
+    font-size: 1.12rem;
+    line-height: 120%;
+  }
 `;
 
 const Tagline = (): ReactElement => {

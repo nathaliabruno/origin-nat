@@ -36,6 +36,10 @@ const MonthlyInput = styled(MaskedInput)`
   width: 100%;
   text-align: center;
   padding: 1.5rem 2rem;
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+    line-height: 120%;
+  }
 `;
 
 const MonthlyWrapper = styled.div`
@@ -55,6 +59,11 @@ const MonthlyLabel = styled.h4`
   justify-content: center;
   width: 100%;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+    line-height: 120%;
+  }
 `;
 const MonthlyAmount = (): ReactElement => {
   const monthsToReach = useSelector(selectMonthsToReach);

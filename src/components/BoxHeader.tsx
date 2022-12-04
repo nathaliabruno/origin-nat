@@ -19,6 +19,9 @@ const Title = styled.h1`
   line-height: 120%;
   color: #1e2a32;
   margin: 0 0 0.25rem 0;
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const Subtitle = styled.h2`
@@ -27,6 +30,9 @@ const Subtitle = styled.h2`
   line-height: 150%;
   color: #708797;
   margin: 0;
+  @media (max-width: 768px) {
+    font-size: 0.75rem;
+  }
 `;
 
 const Icon = styled.img`
