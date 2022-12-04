@@ -39,6 +39,7 @@ const MonthlyInput = styled(MaskedInput)`
   @media (max-width: 768px) {
     font-size: 1.5rem;
     line-height: 120%;
+    opacity: 1;
   }
 `;
 
