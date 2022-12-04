@@ -23,49 +23,49 @@ const maskOptions = {
   allowLeadingZeros: false,
 };
 
+const InputAmountComponent = styled.div`
+  position: relative;
+`;
+
+const InputFieldWrapper = styled.label`
+  border: 1px solid #e9eef2;
+  border-radius: 4px;
+  position: relative;
+  padding: 0.9rem 0.9rem 0.9rem 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  &:before {
+    content: url('${moneySvg}');
+    width: 1.9rem;
+  }
+`;
+
+const InputField = styled(MaskedInput)`
+  display: inline-block;
+  width: calc(100% - 3.7rem);
+  border: none;
+  outline: none;
+  width: 100%;
+  font-family: 'Rubik';
+  font-size: 1.2rem;
+  line-height: 1.9rem;
+  color: #4d6475;
+`;
+
 const InputAmount = (props: InputProps): ReactElement => {
   const { label } = props;
   const currencyMask = createNumberMask({
     ...maskOptions,
   });
 
-  const InputAmount = styled.div`
-    position: relative;
-  `;
-
-  const InputFieldWrapper = styled.label`
-    border: 1px solid #e9eef2;
-    border-radius: 4px;
-    position: relative;
-    padding: 0.9rem 0.9rem 0.9rem 0.9rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: flex-start;
-
-    &:before {
-      content: url('${moneySvg}');
-      width: 1.9rem;
-    }
-  `;
-
-  const InputField = styled(MaskedInput)`
-    display: inline-block;
-    width: calc(100% - 3.7rem);
-    border: none;
-    outline: none;
-    width: 100%;
-    font-family: 'Rubik';
-    font-size: 1.2rem;
-    line-height: 1.9rem;
-    color: #4d6475;
-  `;
-
   const handleChange = (value: string) => {
     console.log(getNumber(value));
   };
 
   return (
-    <InputAmount className="Amount">
+    <InputAmountComponent className="Amount">
       <InputLabel labelFor="amount">{label}</InputLabel>
       <InputFieldWrapper htmlFor="amount">
         <InputField
@@ -76,7 +76,7 @@ const InputAmount = (props: InputProps): ReactElement => {
           onChange={(e) => handleChange(e.target.value)}
         />
       </InputFieldWrapper>
-    </InputAmount>
+    </InputAmountComponent>
   );
 };
 
