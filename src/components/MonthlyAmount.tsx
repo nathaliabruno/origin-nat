@@ -28,6 +28,7 @@ const MonthlyInput = styled(MaskedInput)`
   line-heigh: 2.525rem;
   color: #0079ff;
   font-family: 'Rubik';
+  background: white;
 `;
 
 const MonthlyAmount = (): ReactElement => {
@@ -53,6 +54,7 @@ const MonthlyAmount = (): ReactElement => {
         name="monthlyAmount"
         value={monthlyAmount || 0}
         readOnly
+        disabled
       />
     </div>
   );
