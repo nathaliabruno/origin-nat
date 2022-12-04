@@ -5,6 +5,10 @@ import createNumberMask from 'text-mask-addons/dist/createNumberMask';
 import InputLabel from './InputLabel';
 import { getNumber } from '../utils';
 
+import { useSelector, useDispatch } from 'react-redux';
+
+import { setByAmount, selectAmount } from '../redux/slices/amountSlice';
+
 import moneySvg from '../assets/icons/money.svg';
 
 interface InputProps {
@@ -60,8 +64,11 @@ const InputAmount = (props: InputProps): ReactElement => {
     ...maskOptions,
   });
 
+  const amount = useSelector(selectAmount);
+  const dispatch = useDispatch();
+
   const handleChange = (value: string) => {
-    console.log(getNumber(value));
+    dispatch(setByAmount(getNumber(value)));
   };
 
   return (
@@ -73,6 +80,7 @@ const InputAmount = (props: InputProps): ReactElement => {
           inputMode="numeric"
           id="amount"
           name="amount"
+          value={amount || 0}
           onChange={(e) => handleChange(e.target.value)}
         />
       </InputFieldWrapper>
