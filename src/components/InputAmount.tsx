@@ -42,7 +42,7 @@ const InputAmountComponent = styled.div`
 
 const InputFieldWrapper = styled.label`
   border: 1px solid #e9eef2;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   position: relative;
   padding: 0.9rem 0.9rem 0.9rem 0.9rem;
   display: inline-flex;

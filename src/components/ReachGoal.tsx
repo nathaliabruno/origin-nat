@@ -45,6 +45,7 @@ const ReachDateWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   border: 1px solid #e9eef2;
+  border-radius: 0.25rem;
   padding: 0.5rem;
 `;
 
@@ -66,6 +67,7 @@ const MonthText = styled.span`
 
 const YearText = styled.span`
   font-weight: 400;
+  color: #8a9ca9;
 `;
 
 const ReachGoal = (): ReactElement => {

@@ -5,6 +5,7 @@ import ReachGoal from './ReachGoal';
 import MonthlyAmount from './MonthlyAmount';
 import { ReactElement } from 'react';
 import DetailsText from './DetailsText';
+import BoxHeader from './BoxHeader';
 
 const BoxWrapper = styled.div`
   display: flex;
@@ -46,6 +47,7 @@ const DetailsWrapper = styled.div`
 const BoxContent = (): ReactElement => {
   return (
     <BoxWrapper>
+      <BoxHeader />
       <FormWrapper>
         <InputAmount label="Total amount" />
         <ReachGoal />
