@@ -37,9 +37,10 @@ const MonthlyInput = styled(MaskedInput)`
   text-align: center;
   padding: 1.5rem 2rem;
   @media (max-width: 768px) {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     line-height: 120%;
     opacity: 1;
+    padding: 1.5rem 0.5rem;
   }
 `;
 
@@ -62,7 +63,7 @@ const MonthlyLabel = styled.h4`
   text-align: center;
 
   @media (max-width: 768px) {
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 120%;
   }
 `;
