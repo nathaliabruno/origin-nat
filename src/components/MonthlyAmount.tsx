@@ -2,10 +2,8 @@ import { ReactElement, useEffect, useState } from 'react';
 
 import { useSelector } from 'react-redux';
 
-import { selectMonthsToReach, selectDate } from '../redux/slices/dateSlice';
-import { selectAmount, selectMaskedAmount } from '../redux/slices/amountSlice';
-
-import { getMonthYearDateText } from '../utils/dates';
+import { selectMonthsToReach } from '../redux/slices/dateSlice';
+import { selectAmount } from '../redux/slices/amountSlice';
 
 import MaskedInput from 'react-text-mask';
 import { createNumberMask } from 'text-mask-addons';
@@ -31,14 +29,36 @@ const MonthlyInput = styled(MaskedInput)`
   color: #0079ff;
   font-family: 'Rubik';
   background: white;
+  flex-basis: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  padding: 1.5rem 2rem;
 `;
 
+const MonthlyWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const MonthlyLabel = styled.h4`
+  flex-basis: 50%;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+`;
 const MonthlyAmount = (): ReactElement => {
   const monthsToReach = useSelector(selectMonthsToReach);
   const amount = useSelector(selectAmount);
-  const maskedAmount = useSelector(selectMaskedAmount);
-  const reachDate = useSelector(selectDate);
-  const { month, year } = getMonthYearDateText(reachDate);
 
   const [monthlyAmount, setMonthlyAmount] = useState(0);
 
@@ -51,7 +71,8 @@ const MonthlyAmount = (): ReactElement => {
   }, [monthsToReach, amount]);
 
   return (
-    <div>
+    <MonthlyWrapper>
+      <MonthlyLabel>Monthly Amount</MonthlyLabel>
       <MonthlyInput
         mask={currencyMask}
         inputMode="numeric"
@@ -61,15 +82,7 @@ const MonthlyAmount = (): ReactElement => {
         readOnly
         disabled
       />
-
-      <p>
-        You are planning <strong>{monthsToReach} monthly deposits</strong> to
-        reach your <strong>${maskedAmount}</strong> goal by{' '}
-        <strong>
-          {month} {year}
-        </strong>
-      </p>
-    </div>
+    </MonthlyWrapper>
   );
 };
 

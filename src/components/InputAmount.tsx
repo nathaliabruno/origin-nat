@@ -33,6 +33,8 @@ const maskOptions = {
 
 const InputAmountComponent = styled.div`
   position: relative;
+  width: 100%;
+  flex-basis: 49%;
 `;
 
 const InputFieldWrapper = styled.label`

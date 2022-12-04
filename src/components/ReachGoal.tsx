@@ -16,6 +16,12 @@ import {
 import dayjs from 'dayjs';
 import styled from 'styled-components';
 
+const ReachDateComponent = styled.div`
+  position: relative;
+  width: 100%;
+  flex-basis: 49%;
+`;
+
 const Button = styled.button`
   background-color: transparent;
   border: none;
@@ -35,7 +41,7 @@ const Button = styled.button`
 `;
 
 const ReachDateWrapper = styled.div`
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   border: 1px solid #e9eef2;
@@ -75,7 +81,7 @@ const ReachGoal = (): ReactElement => {
 
   const { month, year } = getMonthYearDateText(reachDate);
   return (
-    <div>
+    <ReachDateComponent>
       <InputLabel labelFor="reachDate">Reach goal by</InputLabel>
       <ReachDateWrapper>
         <Button
@@ -93,7 +99,7 @@ const ReachGoal = (): ReactElement => {
           <img alt="next" src={arrowRight} />
         </Button>
       </ReachDateWrapper>
-    </div>
+    </ReachDateComponent>
   );
 };
 

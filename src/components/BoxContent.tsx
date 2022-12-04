@@ -1,0 +1,51 @@
+import styled from 'styled-components';
+import Button from './Button';
+import InputAmount from './InputAmount';
+import ReachGoal from './ReachGoal';
+import MonthlyAmount from './MonthlyAmount';
+import { ReactElement } from 'react';
+import DetailsText from './DetailsText';
+
+const BoxWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-width: 560px;
+  margin: 50px auto;
+  align-items: center;
+`;
+
+const FormWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  width: 100%;
+`;
+
+const DetailsWrapper = styled.div`
+  border: 1px solid #e9eef2;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+`;
+
+const BoxContent = (): ReactElement => {
+  return (
+    <BoxWrapper>
+      <FormWrapper>
+        <InputAmount label="Total amount" />
+        <ReachGoal />
+      </FormWrapper>
+      <DetailsWrapper>
+        <MonthlyAmount />
+        <DetailsText />
+      </DetailsWrapper>
+      <div>
+        <Button type="button" color="white" text="Confirm" bgColor="#1B31A8" />
+      </div>
+    </BoxWrapper>
+  );
+};
+
+export default BoxContent;
