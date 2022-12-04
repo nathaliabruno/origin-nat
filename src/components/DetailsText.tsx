@@ -30,7 +30,7 @@ const DetailsText = (): ReactElement => {
       <strong>
         {monthsToReach} monthly deposit{monthsToReach > 1 && 's'}
       </strong>{' '}
-      to reach your <strong>${maskedAmount}</strong> goal by{' '}
+      to reach your <strong>{maskedAmount}</strong> goal by{' '}
       <strong>
         {month} {year}
       </strong>
