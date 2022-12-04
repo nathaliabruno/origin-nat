@@ -6,11 +6,11 @@ interface MonthYearProps {
 }
 
 interface CurrentDate {
-  date: Dayjs;
+  date: string;
   month: string;
   year: number;
 }
-export const getMonthYearDateText = (date: Dayjs): MonthYearProps => {
+export const getMonthYearDateText = (date: string): MonthYearProps => {
   return {
     month: dayjs(date).format('MMMM'),
     year: dayjs(date).year(),
@@ -26,7 +26,7 @@ export const getNextMonthDate = (date: Dayjs): Dayjs => {
 };
 
 export const getCurrentDate = (): CurrentDate => {
-  const currentDate = dayjs();
+  const currentDate = dayjs().toISOString();
   const { month, year } = getMonthYearDateText(currentDate);
 
   return {

@@ -18,9 +18,10 @@ const ReachGoal = (): ReactElement => {
   const dispatch = useDispatch();
 
   const isCurrentMonth =
-    getMonthYearDateText(dayjs()).month ===
+    getMonthYearDateText(dayjs().toISOString()).month ===
       getMonthYearDateText(reachDate).month &&
-    getMonthYearDateText(dayjs()).year === getMonthYearDateText(reachDate).year;
+    getMonthYearDateText(dayjs().toISOString()).year ===
+      getMonthYearDateText(reachDate).year;
 
   return (
     <div>
