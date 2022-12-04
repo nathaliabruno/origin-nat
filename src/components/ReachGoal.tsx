@@ -19,7 +19,7 @@ import styled from 'styled-components';
 const ReachDateComponent = styled.div`
   position: relative;
   width: 100%;
-  flex-basis: 49%;
+  flex-basis: 39%;
 `;
 
 const Button = styled.button`
@@ -56,7 +56,7 @@ const DateWrapper = styled.h4`
   font-size: 1rem;
   line-height: 1.5rem;
   color: #1e2a32;
-  width: 10rem;
+  width: 50%;
   margin: 0;
 `;
 

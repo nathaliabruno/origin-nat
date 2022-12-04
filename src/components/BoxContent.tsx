@@ -12,6 +12,14 @@ const BoxWrapper = styled.div`
   max-width: 560px;
   margin: 50px auto;
   align-items: center;
+  padding: 2.5rem;
+  background-color: white;
+  box-shadow: 0px 16px 32px rgba(30, 42, 50, 0.08);
+  border-radius: 8px;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
 `;
 
 const FormWrapper = styled.div`
@@ -20,6 +28,11 @@ const FormWrapper = styled.div`
   justify-content: space-between;
   margin-bottom: 1.5rem;
   width: 100%;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
 `;
 
 const DetailsWrapper = styled.div`

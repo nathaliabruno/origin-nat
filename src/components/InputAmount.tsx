@@ -33,8 +33,11 @@ const maskOptions = {
 
 const InputAmountComponent = styled.div`
   position: relative;
+  flex-basis: 59%;
   width: 100%;
-  flex-basis: 49%;
+  @media (max-width: 768px) {
+    margin-bottom: 1rem;
+  }
 `;
 
 const InputFieldWrapper = styled.label`
@@ -45,6 +48,9 @@ const InputFieldWrapper = styled.label`
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 
   &:before {
     content: url('${moneySvg}');
