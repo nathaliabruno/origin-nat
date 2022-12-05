@@ -1,13 +1,9 @@
 import { ReactElement, useEffect, useState } from 'react';
-
 import { useSelector } from 'react-redux';
-
 import { selectMonthsToReach } from '../../redux/slices/dateSlice';
 import { selectAmount } from '../../redux/slices/amountSlice';
-
-import MaskedInput from 'react-text-mask';
+import { MonthlyInput, MonthlyWrapper, MonthlyLabel } from './styles';
 import { createNumberMask } from 'text-mask-addons';
-import styled from 'styled-components';
 
 const maskOptions = {
   prefix: '$',
@@ -21,52 +17,6 @@ const maskOptions = {
   allowLeadingZeros: false,
 };
 
-const MonthlyInput = styled(MaskedInput)`
-  border: none;
-  outline: none;
-  font-size: 2rem;
-  line-heigh: 2.525rem;
-  color: #0079ff;
-  font-family: 'Rubik';
-  background: white;
-  flex-basis: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  text-align: center;
-  padding: 1.5rem 2rem;
-  @media (max-width: 768px) {
-    font-size: 1.25rem;
-    line-height: 120%;
-    opacity: 1;
-    padding: 1.5rem 0.5rem;
-  }
-`;
-
-const MonthlyWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-const MonthlyLabel = styled.h4`
-  flex-basis: 50%;
-  font-size: 1.25rem;
-  line-height: 1.5rem;
-  font-weight: 400;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  text-align: center;
-
-  @media (max-width: 768px) {
-    font-size: 1rem;
-    line-height: 120%;
-  }
-`;
 const MonthlyAmount = (): ReactElement => {
   const monthsToReach = useSelector(selectMonthsToReach);
   const amount = useSelector(selectAmount);
