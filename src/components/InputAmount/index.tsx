@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ReactElement, useState } from 'react';
 import createNumberMask from 'text-mask-addons/dist/createNumberMask';
 import InputLabel from '../InputLabel';
 import { getNumber } from '../../utils';
@@ -28,6 +28,7 @@ const maskOptions = {
 
 const InputAmount = (props: InputProps): ReactElement => {
   const { label } = props;
+  const [focus, setFocus] = useState(false);
   const currencyMask = createNumberMask({
     ...maskOptions,
   });
@@ -43,7 +44,10 @@ const InputAmount = (props: InputProps): ReactElement => {
   return (
     <InputAmountComponent className="Amount">
       <InputLabel labelFor="amount">{label}</InputLabel>
-      <InputFieldWrapper htmlFor="amount">
+      <InputFieldWrapper
+        htmlFor="amount"
+        borderColor={focus ? '#1b31a8' : '#e9eef2'}
+      >
         <InputField
           mask={currencyMask}
           inputMode="numeric"
@@ -51,6 +55,9 @@ const InputAmount = (props: InputProps): ReactElement => {
           name="amount"
           value={amount || 0}
           onChange={(e) => handleChange(e.target.value)}
+          onFocus={() => setFocus(true)}
+          onBlur={() => setFocus(false)}
+          tabIndex={1}
         />
       </InputFieldWrapper>
     </InputAmountComponent>

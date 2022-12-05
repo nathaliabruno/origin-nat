@@ -31,6 +31,12 @@ export const ReachDateWrapper = styled.div`
   border: 1px solid #e9eef2;
   border-radius: 0.25rem;
   padding: 0.5rem;
+  transition: border-color 0.3s ease;
+
+  &:focus {
+    border-color: #1b31a8;
+    outline: none;
+  }
 `;
 
 export const DateWrapper = styled.h4`

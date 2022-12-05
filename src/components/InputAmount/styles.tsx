@@ -3,6 +3,10 @@ import MaskedInput from 'react-text-mask';
 
 import moneySvg from '../../assets/icons/money.svg';
 
+interface BorderStyled {
+  borderColor: string;
+}
+
 export const InputAmountComponent = styled.div`
   position: relative;
   flex-basis: 59%;
@@ -27,14 +31,15 @@ export const InputField = styled(MaskedInput)`
   }
 `;
 
-export const InputFieldWrapper = styled.label`
-  border: 1px solid var(--border-color);
+export const InputFieldWrapper = styled('label')<BorderStyled>`
+  border: 1px solid ${(props) => props.borderColor};
   border-radius: 0.25rem;
   position: relative;
   padding: 0.9rem 0.9rem 0.9rem 0.9rem;
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
+  transition: border-color 0.3s ease;
   @media (max-width: 768px) {
     width: 100%;
   }
