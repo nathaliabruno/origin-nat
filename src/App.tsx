@@ -36,7 +36,7 @@ const GlobalStyle = createGlobalStyle`
 
 export function App(): JSX.Element {
   return (
-    <Root data-testid="greetings-container">
+    <Root>
       <GlobalStyle />
       <PageHeader />
       <Tagline />

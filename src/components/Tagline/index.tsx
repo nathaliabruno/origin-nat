@@ -5,7 +5,7 @@ import { TaglineText } from './styles';
 const Tagline = (): ReactElement => {
   return (
     <TaglineText>
-      <span>
+      <span data-testid="tagline">
         Let's plan your <strong>saving goal</strong>.
       </span>
     </TaglineText>
