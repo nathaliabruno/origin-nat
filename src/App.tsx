@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import BoxContent from './components/BoxContent';
 import PageHeader from './components/PageHeader';
 import Tagline from './components/Tagline';
@@ -17,9 +17,27 @@ const Root = styled.div`
   }
 `;
 
+const GlobalStyle = createGlobalStyle`
+  body {
+    --border-color: #e9eef2
+  }
+  body, html, #root {
+    margin: 0;
+    padding: 0;
+    border: none;
+    position: absolute;
+    top: 0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+`;
+
 export function App(): JSX.Element {
   return (
     <Root data-testid="greetings-container">
+      <GlobalStyle />
       <PageHeader />
       <Tagline />
       <BoxContent />

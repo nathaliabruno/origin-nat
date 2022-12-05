@@ -40,8 +40,23 @@ const InputAmountComponent = styled.div`
   }
 `;
 
+const InputField = styled(MaskedInput)`
+  display: inline-block;
+  width: calc(100% - 3.7rem);
+  border: none;
+  outline: none;
+  font-family: 'Rubik';
+  font-size: 1.2rem;
+  line-height: 1.9rem;
+  color: #4d6475;
+
+  &:focus {
+    --border-color: #1b31a8;
+  }
+`;
+
 const InputFieldWrapper = styled.label`
-  border: 1px solid #e9eef2;
+  border: 1px solid var(--border-color);
   border-radius: 0.25rem;
   position: relative;
   padding: 0.9rem 0.9rem 0.9rem 0.9rem;
@@ -56,18 +71,6 @@ const InputFieldWrapper = styled.label`
     content: url('${moneySvg}');
     width: 1.9rem;
   }
-`;
-
-const InputField = styled(MaskedInput)`
-  display: inline-block;
-  width: calc(100% - 3.7rem);
-  border: none;
-  outline: none;
-  width: 100%;
-  font-family: 'Rubik';
-  font-size: 1.2rem;
-  line-height: 1.9rem;
-  color: #4d6475;
 `;
 
 const InputAmount = (props: InputProps): ReactElement => {
