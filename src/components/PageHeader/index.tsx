@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { ReactElement } from 'react';
 
-import logo from '../assets/logo.svg';
+import logo from '../../assets/logo.svg';
 
 const HeaderWrapper = styled.header`
   display: flex;

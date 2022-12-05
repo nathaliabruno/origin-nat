@@ -2,8 +2,8 @@ import { ReactElement } from 'react';
 import styled from 'styled-components';
 import MaskedInput from 'react-text-mask';
 import createNumberMask from 'text-mask-addons/dist/createNumberMask';
-import InputLabel from './InputLabel';
-import { getNumber } from '../utils';
+import InputLabel from '../InputLabel';
+import { getNumber } from '../../utils';
 
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -11,9 +11,9 @@ import {
   setByAmount,
   selectAmount,
   setMasked,
-} from '../redux/slices/amountSlice';
+} from '../../redux/slices/amountSlice';
 
-import moneySvg from '../assets/icons/money.svg';
+import moneySvg from '../../assets/icons/money.svg';
 
 interface InputProps {
   label: string;

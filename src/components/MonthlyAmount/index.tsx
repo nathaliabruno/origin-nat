@@ -2,8 +2,8 @@ import { ReactElement, useEffect, useState } from 'react';
 
 import { useSelector } from 'react-redux';
 
-import { selectMonthsToReach } from '../redux/slices/dateSlice';
-import { selectAmount } from '../redux/slices/amountSlice';
+import { selectMonthsToReach } from '../../redux/slices/dateSlice';
+import { selectAmount } from '../../redux/slices/amountSlice';
 
 import MaskedInput from 'react-text-mask';
 import { createNumberMask } from 'text-mask-addons';

@@ -1,11 +1,11 @@
-import styled from 'styled-components';
-import Button from './Button';
-import InputAmount from './InputAmount';
-import ReachGoal from './ReachGoal';
-import MonthlyAmount from './MonthlyAmount';
 import { ReactElement } from 'react';
-import DetailsText from './DetailsText';
-import BoxHeader from './BoxHeader';
+import styled from 'styled-components';
+import Button from '../Button';
+import InputAmount from '../InputAmount';
+import ReachGoal from '../ReachGoal';
+import MonthlyAmount from '../MonthlyAmount';
+import DetailsText from '../DetailsText';
+import BoxHeader from '../BoxHeader';
 
 const BoxWrapper = styled.div`
   display: flex;

@@ -1,18 +1,18 @@
 import { ReactElement } from 'react';
-import InputLabel from './InputLabel';
+import InputLabel from './../InputLabel';
 
-import { getMonthYearDateText } from '../utils/dates';
+import { getMonthYearDateText } from '../../utils/dates';
 
 import { useSelector, useDispatch } from 'react-redux';
 
-import arrowLeft from '../assets/icons/arrow-left.svg';
-import arrowRight from '../assets/icons/arrow-right.svg';
+import arrowLeft from '../../assets/icons/arrow-left.svg';
+import arrowRight from '../../assets/icons/arrow-right.svg';
 
 import {
   incrementDate,
   decrementDate,
   selectDate,
-} from '../redux/slices/dateSlice';
+} from '../../redux/slices/dateSlice';
 import dayjs from 'dayjs';
 import styled from 'styled-components';
 

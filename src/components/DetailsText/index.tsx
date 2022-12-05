@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { ReactElement } from 'react';
 
-import { selectMonthsToReach, selectDate } from '../redux/slices/dateSlice';
-import { selectMaskedAmount } from '../redux/slices/amountSlice';
+import { selectMonthsToReach, selectDate } from '../../redux/slices/dateSlice';
+import { selectMaskedAmount } from '../../redux/slices/amountSlice';
 
-import { getMonthYearDateText } from '../utils/dates';
+import { getMonthYearDateText } from '../../utils/dates';
 import { useSelector } from 'react-redux';
 
 const DetailsWrapper = styled.p`

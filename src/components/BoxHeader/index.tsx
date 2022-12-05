@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { ReactElement } from 'react';
 
-import houseIcon from '../assets/icons/buy-a-house.svg';
+import houseIcon from '../../assets/icons/buy-a-house.svg';
 
 const HeaderWrapper = styled.div`
   display: flex;
