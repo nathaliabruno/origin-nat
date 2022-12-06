@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+interface BorderStyled {
+  borderColor: string;
+}
+
 export const ReachDateComponent = styled.div`
   position: relative;
   width: 100%;
@@ -13,6 +17,7 @@ export const Button = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  outline: none;
 
   &:hover {
     cursor: pointer;
@@ -24,17 +29,16 @@ export const Button = styled.button`
   }
 `;
 
-export const ReachDateWrapper = styled.div`
+export const ReachDateWrapper = styled('div')<BorderStyled>`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid #e9eef2;
+  border: 1px solid ${(props) => props.borderColor};
   border-radius: 0.25rem;
   padding: 0.5rem;
   transition: border-color 0.3s ease;
 
   &:focus {
-    border-color: #1b31a8;
     outline: none;
   }
 `;

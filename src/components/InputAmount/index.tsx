@@ -58,6 +58,7 @@ const InputAmount = (props: InputProps): ReactElement => {
           onFocus={() => setFocus(true)}
           onBlur={() => setFocus(false)}
           tabIndex={1}
+          autoFocus
         />
       </InputFieldWrapper>
     </InputAmountComponent>
