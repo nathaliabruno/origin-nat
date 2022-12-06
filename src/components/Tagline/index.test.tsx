@@ -1,4 +1,3 @@
-import { shallow } from 'enzyme';
 import Tagline from './index';
 import { render } from '@testing-library/react';
 

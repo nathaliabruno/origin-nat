@@ -72,14 +72,14 @@ const ReachGoal = (): ReactElement => {
 
   const { month, year } = getMonthYearDateText(reachDate);
   return (
-    <ReachDateComponent
-      onBlur={() => setFocus(false)}
-      onFocus={() => setFocus(true)}
-    >
+    <ReachDateComponent>
       <InputLabel labelFor="reachDate">Reach goal by</InputLabel>
       <ReachDateWrapper
         tabIndex={2}
         borderColor={focus ? '#1b31a8' : '#e9eef2'}
+        onBlur={() => setFocus(false)}
+        onFocus={() => setFocus(true)}
+        data-testid="date-wrapper"
       >
         <Button
           type="button"
@@ -88,11 +88,12 @@ const ReachGoal = (): ReactElement => {
             setFocus(true);
           }}
           disabled={isCurrentMonth}
+          data-testid="prev"
         >
           <img alt="previous" title="Previous" src={arrowLeft} />
         </Button>
         <DateWrapper>
-          <MonthText>{month}</MonthText>
+          <MonthText data-testid="month">{month}</MonthText>
           <YearText>{year}</YearText>
         </DateWrapper>
         <Button
@@ -101,6 +102,7 @@ const ReachGoal = (): ReactElement => {
             increment();
             setFocus(true);
           }}
+          data-testid="next"
         >
           <img alt="next" title="Next" src={arrowRight} />
         </Button>
