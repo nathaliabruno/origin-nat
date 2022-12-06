@@ -9,8 +9,17 @@ describe('ReachDateComponent', () => {
       expect(component.getByTestId('month').innerHTML).toBe('December');
     });
   });
-  describe('Check keyboard', () => {
-    it('if focused change months by keyboard', () => {
+  describe('Avoid previous month', () => {
+    it('Do not change to november', () => {
+      const component = renderWithProviders(<ReachDateComponent />);
+
+      fireEvent.click(component.getByTestId('prev'));
+
+      expect(screen.getByTestId('month').innerHTML).toBe('December');
+    });
+  });
+  describe('Get Next Month', () => {
+    it('Change to January', () => {
       const component = renderWithProviders(<ReachDateComponent />);
 
       fireEvent.click(component.getByTestId('next'));

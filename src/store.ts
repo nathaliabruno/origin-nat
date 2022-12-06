@@ -9,7 +9,7 @@ const rootReducer = combineReducers({
   date: dateReducer,
   amount: amountReducer,
 });
-
+// eslint-disable-next-line
 export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
   return configureStore({
     reducer: rootReducer,
