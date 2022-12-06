@@ -37,8 +37,10 @@ const InputAmount = (props: InputProps): ReactElement => {
   const dispatch = useDispatch();
 
   const handleChange = (value: string) => {
-    dispatch(setByAmount(getNumber(value)));
-    dispatch(setMasked(`$${value}`));
+    if (getNumber(value) > 0) {
+      dispatch(setByAmount(getNumber(value)));
+      dispatch(setMasked(`$${value}`));
+    }
   };
 
   return (
@@ -53,7 +55,7 @@ const InputAmount = (props: InputProps): ReactElement => {
           inputMode="numeric"
           id="amount"
           name="amount"
-          value={amount || 0}
+          value={amount}
           onChange={(e) => handleChange(e.target.value)}
           onFocus={() => setFocus(true)}
           onBlur={() => setFocus(false)}
